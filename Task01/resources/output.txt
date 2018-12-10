@@ -1,1 +1,4 @@
 Test print to file
+Second line
+Third line
+Another line
