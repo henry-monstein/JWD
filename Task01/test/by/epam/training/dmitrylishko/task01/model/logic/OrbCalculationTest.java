@@ -7,7 +7,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-
 public class OrbCalculationTest {
     private static Orb orb;
 
@@ -41,24 +40,23 @@ public class OrbCalculationTest {
 
     @Test
     public void testVolumeRatio() {
-        fail();
+        double newRadius = 9;
+        Orb orb1 = new Orb(newRadius);
+        assertEquals(OrbCalculation.volumeRatio(orb1, 0, 0, 1, 6)[1], 12.5, EPS);
     }
 
     @Test
     public void testIsOrbByObj() {
-        fail();
-
+        assertTrue(OrbCalculation.isOrb(orb));
     }
 
     @Test
     public void testIsOrbByRad() {
-        fail();
-
+        assertTrue(OrbCalculation.isOrb(radius));
     }
 
     @Test
     public void testIsOrbCrossCoordinatePlane() {
-        fail();
-
+        assertTrue(OrbCalculation.isOrbCrossCoordinatePlane(orb));
     }
 }

@@ -36,13 +36,9 @@ public class OrbCalculation {
     }
 
     public static boolean isOrbCrossCoordinatePlane(Orb orb) {
-        if (distanceToPlane(orb, 2, 2, 0, 0) < orb.getRadius() &&
-                distanceToPlane(orb, 2, 0, 2, 0) < orb.getRadius() &&
-                distanceToPlane(orb, 0, 2, 2, 0) < orb.getRadius()) {
-            return true;
-        } else {
-            return false;
-        }
+        return distanceToPlane(orb, 0, 0, 1, 0) < orb.getRadius() ||
+                distanceToPlane(orb, 0, 1, 0, 0) < orb.getRadius() ||
+                distanceToPlane(orb, 1, 0, 0, 0) < orb.getRadius();
     }
 
     private static double distanceToPlane(Orb orb, double a, double b, double c, double d) {
