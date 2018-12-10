@@ -9,8 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Read {
-    public static String[] readFromFile() {
-        String fileName = ".\\resources\\input.txt";
+    public String[] readFromFile(String fileName) {
         List<String> list = new ArrayList<>();
         try (BufferedReader br = Files.newBufferedReader(Paths.get(fileName))) {
 
@@ -19,7 +18,7 @@ public class Read {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String[] array=new String[list.size()];
+        String[] array = new String[list.size()];
         return list.toArray(array);
     }
 }

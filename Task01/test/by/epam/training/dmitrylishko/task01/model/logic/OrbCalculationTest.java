@@ -26,6 +26,11 @@ public class OrbCalculationTest {
         orb = null;
     }
 
+    @Test(expectedExceptions = NullPointerException.class)
+    public void testCallException() {
+        OrbCalculation.surfaceArea(null);
+    }
+
     @Test
     public void testSurfaceArea() {
         double area = 36 * OrbCalculation.PI;
@@ -47,6 +52,12 @@ public class OrbCalculationTest {
 
     @Test
     public void testIsOrbByObj() {
+        assertTrue(OrbCalculation.isOrb(orb));
+    }
+
+    @Test
+    public void testIsOrbByObjFail() {
+
         assertTrue(OrbCalculation.isOrb(orb));
     }
 

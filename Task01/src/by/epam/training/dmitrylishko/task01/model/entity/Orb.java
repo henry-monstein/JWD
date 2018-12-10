@@ -1,6 +1,6 @@
 package by.epam.training.dmitrylishko.task01.model.entity;
 
-import java.util.Objects;
+import by.epam.training.dmitrylishko.task01.model.exceptions.NegativeRadiusException;
 
 public class Orb extends Dot3D {
     public static final double DEFAULT_RADIUS = 1;
@@ -40,7 +40,7 @@ public class Orb extends Dot3D {
     }
 
     private void copy(Orb orb) {
-        if (orb == null){
+        if (orb == null) {
             throw new NullPointerException();
         }
         setRadius(orb.radius);
