@@ -18,7 +18,6 @@ public class Read {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String[] array = new String[list.size()];
-        return list.toArray(array);
+        return list.toArray(new String[list.size()]);
     }
 }
